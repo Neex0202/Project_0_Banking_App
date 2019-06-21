@@ -1,4 +1,4 @@
-package com.revature.Project_0;
+package com.revature.pojos;
 
 public class BankAccount {
 
@@ -8,14 +8,10 @@ public class BankAccount {
 	private double balance;
 	private String customerName;
 	private String email;
-	private String phoneNumber;
 	
 	
-	public BankAccount() {
-		System.out.println("Empty Constructor Called");
-		
-		
-	}
+	
+	public BankAccount() {}
 	
 	public BankAccount(String accountNumber, double balance, String customerName, String email, String phoneNumber) {
 		System.out.println("account constructor with parameters called");
@@ -23,7 +19,7 @@ public class BankAccount {
 		this.balance = balance;
 		this.customerName = customerName;
 		this.email = email;
-		this.phoneNumber = phoneNumber;
+		
 		
 	}
 	
@@ -70,12 +66,7 @@ public class BankAccount {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPhoneNumber() {
-		return phoneNumber;
-	}
-	public void setPhoneNumber(String phoneNumber) {
-		this.phoneNumber = phoneNumber;
-	}
+
 	
 	
 	// End of class

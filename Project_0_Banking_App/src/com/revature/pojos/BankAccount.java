@@ -6,66 +6,80 @@ public class BankAccount {
 	
 	private String accountNumber;
 	private double balance;
-	private String customerName;
-	private String email;
+	
+	private String accountType;
+	private int userID;
 	
 	
 	
 	public BankAccount() {}
 	
-	public BankAccount(String accountNumber, double balance, String customerName, String email, String phoneNumber) {
+	public BankAccount(String accountNumber, double balance,String accountType, int userID) {
 		System.out.println("account constructor with parameters called");
 		this.accountNumber = accountNumber;
-		this.balance = balance;
-		this.customerName = customerName;
-		this.email = email;
+		this.balance = balance;		
+		this.accountType = accountType;
+		this.userID = userID;
 		
 		
 	}
 	
 	
 	
-	public void deposit(double depositAmount) {
-		balance += depositAmount;
-		System.out.println("deposited " + depositAmount + " New Balance = " + this.balance);
-	}
+
 	
-	public void withdrawal(double withdrawalAmount) {
-		if(this.balance - withdrawalAmount < 0) {
-			System.out.println("Only "+ balance +" is available."
-					+ "Withdrwal not processed");
-		} else {
-			balance -= withdrawalAmount;
-			System.out.println("Withdrwal of "+ withdrawalAmount + "processed. Remaining balance = " + this.balance);
-		}
-		
-		
-	}
 	
+	
+	
+	
+
 	public String getAccountNumber() {
 		return accountNumber;
 	}
+
 	public void setAccountNumber(String accountNumber) {
 		this.accountNumber = accountNumber;
 	}
+
 	public double getBalance() {
 		return balance;
 	}
+
 	public void setBalance(double balance) {
 		this.balance = balance;
 	}
-	public String getCustomerName() {
-		return customerName;
+
+
+	public String getAccountType() {
+		return accountType;
 	}
-	public void setCustomerName(String customerName) {
-		this.customerName = customerName;
+
+	public void setAccountType(String accountType) {
+		this.accountType = accountType;
 	}
-	public String getEmail() {
-		return email;
+
+	public int getID() {
+		return userID;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+
+	public void setID(int userID) {
+		this.userID = userID;
 	}
+
+	
+	
+	@Override
+	public String toString() {
+		return "BankAccount [accountNumber=" + accountNumber + ", balance=" + balance + ", accountType=" + accountType + ", userID=" + userID + "]";
+	}
+	
+	
+	
+	
+	
+	
+	
+
 
 	
 	

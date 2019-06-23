@@ -7,6 +7,7 @@ public class User {
 	private String lastName;
 	private String username;
 	private String password;
+	public static String random;
 	
 	
 	//empty constructor

@@ -5,8 +5,7 @@ public class BankAccount {
 	
 	
 	private String accountNumber;
-	private double balance;
-	
+	private double balance;	
 	private String accountType;
 	private int userID;
 	
@@ -14,8 +13,8 @@ public class BankAccount {
 	
 	public BankAccount() {}
 	
-	public BankAccount(String accountNumber, double balance,String accountType, int userID) {
-		System.out.println("account constructor with parameters called");
+	public BankAccount(String accountNumber, double balance, String accountType, int userID) {
+		super();
 		this.accountNumber = accountNumber;
 		this.balance = balance;		
 		this.accountType = accountType;

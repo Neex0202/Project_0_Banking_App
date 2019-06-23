@@ -26,8 +26,8 @@ public class Bank {
 	
 
 	
-	public boolean createAccount(double balance, String accountType) {
-		return accountDao.createAccount(balance, accountType, user.getId());
+	public boolean createAccount(String accountNumber, double balance, String accountType) {
+		return accountDao.createAccount(accountNumber, balance, accountType, user.getId());
 		
 	}
 

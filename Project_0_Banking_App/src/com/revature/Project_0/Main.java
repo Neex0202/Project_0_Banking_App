@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import com.revature.Bank.Bank;
 import com.revature.dao.UserDao;
+import com.revature.pojos.BankAccount;
 import com.revature.pojos.User;
 
 public class Main extends Options{
@@ -14,6 +15,7 @@ public class Main extends Options{
 	
 //	public static UserDao userDao = new UserDao();
 	public static Bank bank = new Bank();
+	public static BankAccount bankAccount = new BankAccount();
 	
 	public static void main(String[] args) {
 	
@@ -61,7 +63,8 @@ public class Main extends Options{
 				+ "1. Check Balance \n"
 				+ "2. Deposit \n"
 				+ "3. Withdrawal \n"
-				+ "4. Log Out \n");
+				+ "4. Create Account \n"
+				+ "5. Log Out \n");
 		String option = scan.nextLine();
 		
 		switch(option) {
@@ -76,7 +79,10 @@ public class Main extends Options{
 		case "3": 
 			bank.withdrawal(300000, "1");
 			loggedInOptions();
-		case "4":
+		case "4": 
+			bank.createAccount(5000, "savings");
+			loggedInOptions();
+		case "5":
 
 			bank.signOut();
 			home();

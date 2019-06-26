@@ -4,7 +4,6 @@ import com.revature.dao.*;
 import com.revature.pojos.User;
 
 public class Bank {
-
 	
 	private UserDao userDao;
 	private AccountDao accountDao;
@@ -81,12 +80,5 @@ public class Bank {
 	
 	
 	
-	
-	
-	
-	
-	
-	
-//	Login 
-	
+
 }

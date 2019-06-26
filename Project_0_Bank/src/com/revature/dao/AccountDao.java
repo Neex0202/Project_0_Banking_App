@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -54,12 +55,20 @@ public class AccountDao {
 			while(rs.next()) {
 				balance = rs.getDouble(1);
 			}
-			String query2 = "UPDATE BANK_ACCOUNT SET BALANCE = ? WHERE CUSTOMER_ID = ? AND ACCOUNT_NUM = ?";			 
-			PreparedStatement ps2 = conn.prepareStatement(query2);
-			ps2.setDouble(1, balance + ammount);
-			ps2.setInt(2, userID);
-			ps2.setString(3, accountNumber);
-			ps2.executeQuery();
+			String sql = "{ call update BANK_ACCOUNT SET BALANCE = ? WHERE CUSTOMER_ID = ? AND ACCOUNT_NUM = ?}";
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setDouble(1, balance + ammount);
+			cs.setInt(2, userID);
+			cs.setString(3, accountNumber);
+			cs.executeQuery();
+			
+			
+//			String query2 = "UPDATE BANK_ACCOUNT SET BALANCE = ? WHERE CUSTOMER_ID = ? AND ACCOUNT_NUM = ?";			 
+//			PreparedStatement ps2 = conn.prepareStatement(query2);
+//			ps2.setDouble(1, balance + ammount);
+//			ps2.setInt(2, userID);
+//			ps2.setString(3, accountNumber);
+//			ps2.executeQuery();
 			
 		} catch (SQLException e) {
 			e.printStackTrace();

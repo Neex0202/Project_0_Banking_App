@@ -1,30 +1,19 @@
-package com.revature.Project_0;
+package com.revature.Main;
 
-import java.util.ArrayList;
-
-import java.util.List;
 import java.util.Scanner;
 
-import com.revature.Bank.*;
-//import com.revature.Project_0.Main.bank;
-import com.revature.dao.*;
-import com.revature.pojos.BankAccount;
-import com.revature.pojos.User;
+import com.revature.Bank.Bank;
 
-public class Main{
+public class Main {
 
 	static Scanner scan = new Scanner(System.in);
-	
 	public static Bank bank = new Bank();
-	public static BankAccount bankAccount = new BankAccount();
 	
 	public static void main(String[] args) {
-	
 		
 		home();
-		//End of main
+
 	}
-	
 	
 	static void home() {
 		System.out.println("What would you like to do today? "
@@ -57,19 +46,18 @@ public class Main{
 		case "2":
 //			function to login
 			
-//			System.out.println("Enter your username");
-//			String usernameLogIn = scan.nextLine();
+			System.out.println("Enter your username");
+			String usernameLogIn = scan.nextLine();
+			
+			System.out.println("Enter your password");
+			String passwordLogIn = scan.nextLine();
+			
+			if(bank.signIn(usernameLogIn, passwordLogIn)){
+			loggedInOptions();
 //			
-//			System.out.println("Enter your password");
-//			String passwordLogIn = scan.nextLine();
-			
-//			if(bank.signIn(usernameLogIn, passwordLogIn)){
-//			LoggedInOptions();
-//			}
-			
-			if(bank.signIn("nf", "pass")) {
-				loggedInOptions();
-				
+//			if(bank.signIn("nf", "pass")) {
+//				loggedInOptions();
+//				
 			}else {
 				home();
 			}
@@ -100,32 +88,32 @@ public class Main{
 			loggedInOptions();
 			break;
 		case "2":
-//			System.out.println("Enter a Deposit Amount \n");
-//			String depAmount = scan.nextLine();
-//			Double result = Double.parseDouble(depAmount);
-//			bank.deposit(result, "1");
-			
-			bank.deposit(1111, "1");
+			System.out.println("Enter a Deposit Amount \n");
+			String depAmount = scan.nextLine();
+			Double result = Double.parseDouble(depAmount);
+			bank.deposit(result, "1");
+//			
+//			bank.deposit(1111, "1");
 			loggedInOptions();
 			break;
 		case "3": 
-//			System.out.println("Enter a Deposit Amount \n");
-//			String withdrawalAmount = scan.nextLine();
-//			Double result2 = Double.parseDouble(withdrawalAmount);
-//			bank.deposit(result2, "1");
-			
-			
-			bank.withdrawal(300000, "1");
+			System.out.println("Enter a Deposit Amount \n");
+			String withdrawalAmount = scan.nextLine();
+			Double result2 = Double.parseDouble(withdrawalAmount);
+			bank.withdrawal(result2, "1");
+//			bank.withdrawal(300000, "1");
 			loggedInOptions();
 		case "4": 
 			
-//			System.out.println("Enter your initial deposit \n");
-//			String initialDep = scan.nextLine();
-//			Double result3 = Double.parseDouble(initialDep);
-//			bank.deposit(result3, "1");
+			System.out.println("Enter your initial deposit \n");
+			String initialDep = scan.nextLine();
+			Double result3 = Double.parseDouble(initialDep);
 			
+			System.out.println("Enter a type of account you want to create \n");
+			String accountType = scan.nextLine();
 			
-			bank.createAccount(5000, "savings");
+			bank.createAccount(result3, accountType);
+//			bank.createAccount(5000, "savings");
 			loggedInOptions();
 		case "5":
 
@@ -142,11 +130,6 @@ public class Main{
 	}
 
 
-	private static String parseDouble(String depAmount) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-	//End of class
+
+
 }

@@ -84,23 +84,33 @@ public class Main {
 		
 		switch(option) {
 		case "1": 
-			System.out.println(bank.checkBalance("1"));
+			System.out.println("Enter your account number");
+			String accountNum = scan.nextLine();
+			
+			System.out.println(bank.checkBalance(accountNum));
 			loggedInOptions();
 			break;
 		case "2":
+			System.out.println("Enter your account number");
+			String accountNumDep = scan.nextLine();
+			
 			System.out.println("Enter a Deposit Amount \n");
 			String depAmount = scan.nextLine();
 			Double result = Double.parseDouble(depAmount);
-			bank.deposit(result, "1");
+			bank.deposit(result, accountNumDep);
 //			
 //			bank.deposit(1111, "1");
 			loggedInOptions();
 			break;
 		case "3": 
+			System.out.println("Enter your account number");
+			String accountNumWithdrawal = scan.nextLine();
+			
+			
 			System.out.println("Enter a Deposit Amount \n");
 			String withdrawalAmount = scan.nextLine();
 			Double result2 = Double.parseDouble(withdrawalAmount);
-			bank.withdrawal(result2, "1");
+			bank.withdrawal(result2, accountNumWithdrawal);
 //			bank.withdrawal(300000, "1");
 			loggedInOptions();
 		case "4": 
